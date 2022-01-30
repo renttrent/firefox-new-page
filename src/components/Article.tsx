@@ -10,9 +10,10 @@ const displayDate = (datestr: string) => {
 }
 
 export default function Article({article} : Props) {
-  console.log(article)
+  // console.log(article)
   return (
-  <div className="container p-3 mt-2 bg-slate-900 rounded-md shadow-md hover:bg-green-900 cursor-pointer" onClick={() => window.open(article.url, "_blank")}>
+  <div className="container p-3 mt-2 bg-stone-400 text-gray-900 rounded-md shadow-md hover:bg-gray-500 cursor-pointer" 
+    onClick={() => window.open(article.url, "_blank")}>
     <div className="title text-lg font-bold">
         {article.abstract}
     </div>
