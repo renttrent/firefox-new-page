@@ -1,6 +1,17 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Article from "./components/Article";
+import { News } from "./types";
 
 function App() {
-  console.log(process.env.REACT_NY_API)
+  const [news, setNews] = useState<News | undefined>(undefined);
+  useEffect(() => {
+    axios.get(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_NY_API}`).then((res) => {
+      setNews(res.data)
+    })  
+
+  }, [])
+
   return (
     <div className="bg-stone-900 text-white p-3 h-screen">
       <nav className="flex flex-row gap-2 w-1/2 justify-between m-auto ">
@@ -12,7 +23,9 @@ function App() {
 
       <div className="latest-news mt-4 ml-10">
         <div className="text-2xl">Latest News</div>
-        
+        <div className="articles container grid grid-cols-2 gap-2 w-11/12 overflow-y" style={{ height: "calc(100vh-100px)"}}>
+          {news && news.results.map((article) => (<Article article={article}/>))}
+        </div>
       </div>
     </div>
   );
