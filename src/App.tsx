@@ -22,8 +22,8 @@ function App() {
 
   return (
     <>
-      <Background/>
-      <div className="bg-neutral-500 items-center mix-blend-multiply absolute w-screen h-screen"></div>
+      <Background width={"w-screen"} height={"h-screen"} query={"landscape"}/>
+      <div className={`bg-neutral-500 items-center mix-blend-multiply absolute h-screen w-screen -z-10`}></div>
 
       <div className="text-white p-3">
         <nav className="flex flex-row gap-2 w-1/2 justify-between m-auto absolute top-1/2 left-1/4 font-extrabold text-x">
@@ -40,12 +40,15 @@ function App() {
             color: "rgba(220, 210, 210, 0.82)",
           }}><a className="hover:text-yellow-400 flex flex-col items-center" href="https://moodle.tum.de"> <TumIcon /> moodle</a></div>
         </nav>
+      </div>
 
-        <div className="latest-news pt-4 pl-10 pb-5 absolute top-full left-0 right-0 bg-gradient-to-r from-neutral-900 to-zinc-800">
-          <div className="text-2xl font-extrabold">Latest News</div>
-          <div className="articles container grid grid-cols-2 gap-2 w-11/12 overflow-y">
-            {news && news.results.slice(0, 10).map((article) => (<Article article={article} key={article.uri}/>))}
-          </div>
+      
+      <div className="latest-news pl-10 pb-5 absolute top-full left-0 right-0 ">
+        <div className={`bg-neutral-500 items-center mix-blend-multiply absolute left-0 h-full w-screen -z-10`}></div>
+        <Background width={"w-screen"} height={"h-full"} more={"absolute left-0"} wait={true} query={"news"}/>
+        <div className="text-2xl font-extrabold text-white mt-4">Latest News</div>
+        <div className="articles container grid grid-cols-2 gap-4 w-11/12 overflow-y mb-4">
+          {news && news.results.slice(0, 10).map((article) => (<Article article={article} key={article.uri}/>))}
         </div>
       </div>
     </>

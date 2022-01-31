@@ -1,26 +1,36 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function Background() {
+interface Props {
+  width: String,
+  height: String,
+  more?: String,
+  wait?: Boolean,
+  query: String
+}
+
+export default function Background({width, height, more, wait, query}: Props) {
 
   const [image, setImage] = useState(undefined)
   useEffect(() => {
-    axios.get(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_UNSPLASH}`).then((res)=>{
-      console.log(res.data)
+    axios.get(`https://api.unsplash.com/photos/random/?query=${query}&client_id=${process.env.REACT_APP_UNSPLASH}`).then((res)=>{
       setImage(res.data.urls.full)
     })
-  }, [])
+  })
 
   return (
+    <>
     <div id="background">
-      <div className="absolute h-screen w-screen -z-50"
+      <div className={`absolute ${width} ${height} -z-50 ${more}`}
         style={{
           backgroundImage: `url(${image})`,
-          backgroundSize: "100%"
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat"
         }}
       >
 
       </div>
     </div>
+    </>
   );
 }
