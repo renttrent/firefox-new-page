@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 export default function Background() {
 
   const [image, setImage] = useState(undefined)

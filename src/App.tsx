@@ -22,24 +22,22 @@ function App() {
 
   return (
     <>
-      <Background />
+      <Background/>
+      <div className="bg-neutral-500 items-center mix-blend-multiply absolute w-screen h-screen"></div>
+
       <div className="text-white p-3">
-        <nav className="flex flex-row gap-2 w-1/2 justify-between m-auto absolute top-1/2 left-1/4 font-extrabold text-xl">
+        <nav className="flex flex-row gap-2 w-1/2 justify-between m-auto absolute top-1/2 left-1/4 font-extrabold text-x">
           <div style={{
             color: "rgba(220, 210, 210, 0.82)",
-            mixBlendMode: "screen",            
           }}><a className="hover:text-yellow-400 flex flex-col items-center mix-blend-normal" href="https://youtube.com"><FaYoutube className="text-red-600"/> youtube</a></div>
           <div style={{
             color: "rgba(220, 210, 210, 0.82)",
-            mixBlendMode: "screen"
           }}><a className="hover:text-yellow-400 flex flex-col items-center" href="https://reddit.com"><FaReddit className="text-orange-600" /> reddit</a></div>
           <div style={{
             color: "rgba(220, 210, 210, 0.82)",
-            mixBlendMode: "screen"
           }}><a className="hover:text-yellow-400 flex flex-col items-center" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/"><TumIcon />campus app</a></div>
           <div style={{
             color: "rgba(220, 210, 210, 0.82)",
-            mixBlendMode: "screen"
           }}><a className="hover:text-yellow-400 flex flex-col items-center" href="https://moodle.tum.de"> <TumIcon /> moodle</a></div>
         </nav>
 
