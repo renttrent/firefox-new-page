@@ -8,7 +8,7 @@ export default function Background() {
   useEffect(() => {
     axios.get(`https://api.unsplash.com/photos/random/?client_id=${process.env.REACT_APP_UNSPLASH}`).then((res)=>{
       console.log(res.data)
-      setImage(res.data.urls.raw)
+      setImage(res.data.urls.full)
     })
   }, [])
 
@@ -16,7 +16,8 @@ export default function Background() {
     <div id="background">
       <div className="absolute h-screen w-screen -z-50"
         style={{
-          backgroundImage: `url(${image})`
+          backgroundImage: `url(${image})`,
+          backgroundSize: "100%"
         }}
       >
 
