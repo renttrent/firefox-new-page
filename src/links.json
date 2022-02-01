@@ -1,0 +1,18 @@
+{
+    "youtube": {
+        "link": "https://youtube.com",
+        "icon": "FaYoutube"
+    },
+    "reddit": {
+        "link": "https://reddit.com",
+        "icon": "FaReddit"
+    },
+    "campus tum": {
+        "link": "https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/",
+        "icon": "FaSchool"
+    },
+    "moodle": {
+        "link": "https://moodle.tum.de",
+        "icon": "FaBookOpen"
+    }
+}

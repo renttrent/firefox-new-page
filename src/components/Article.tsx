@@ -1,7 +1,7 @@
-import { Result } from "../types"
+import { ArticleResponse } from "../types"
 
 interface Props {
-  article: Result
+  article: ArticleResponse
 }
 
 const displayDate = (datestr: string) => {

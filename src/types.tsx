@@ -1,4 +1,4 @@
-export interface Result {
+export interface ArticleResponse {
   "section": string,
   "subsection": string,
   "title": string,
@@ -26,5 +26,5 @@ export interface News {
   "section": string,
   "last_updated": string,
   "num_results": number,
-  "results": Array<Result>
+  "results": Array<ArticleResponse>
 }
