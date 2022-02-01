@@ -16,7 +16,7 @@ REACT_APP_UNSPLASH={secret}
 You can add or remove links in the frontpage by editing the `links.json` file inside `src` folder.
 
 Your link must look like this: 
-```json
+```javascript
 {
     // other links
 
