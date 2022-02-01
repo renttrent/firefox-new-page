@@ -37,6 +37,11 @@ import * as icons from "react-icons/fa"
 import * as icons from "react-icons/md"
 ```
 
+## Some pics
+![Frontpage](examples/frontpage.jpg)
+![Latest News](examples/latest-news.jpg)
+
+
 ## Future plans
 
 Adding more frontpage views.
