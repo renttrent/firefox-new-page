@@ -5,9 +5,8 @@ import { News } from "./types"
 import * as icons from "react-icons/fa"
 import Background from "./components/Background"
 import links from "./links.json"
-
+  
 const links_iterator = Object.keys(links)
-
 
 function App() {
   const [news, setNews] = useState<News | undefined>(undefined);
