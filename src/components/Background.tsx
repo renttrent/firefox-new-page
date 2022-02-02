@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createApi } from "unsplash-js"
+import axios from "axios"
 
 interface Props {
   width: string,
@@ -8,24 +8,15 @@ interface Props {
   query: string
 }
 
-// unplash-js stuff idk
-global.fetch = fetch;
-const unsplash = createApi({
-  accessKey: process.env.REACT_APP_UNSPLASH || "",
-})
-
-
 export default function Background({width, height, more, query}: Props) {
 
   const [image, setImage] = useState(undefined)
   useEffect(() => {
-    
-    unsplash.photos.getRandom({ query: query }).then((res) =>{
-      //@ts-ignore
-      setImage(res.response?.urls?.regular)
-    }).catch((err) => {
-      console.log(err)
+
+    axios.get('https://source.unsplash.com/random').then(res => {
+      setImage(res.request.responseURL)
     })
+
   })
 
   return (
