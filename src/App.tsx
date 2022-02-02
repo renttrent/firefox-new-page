@@ -18,9 +18,11 @@ function App() {
 
   return (
     <>
-      <Background width={"w-screen"} height={"h-screen"} query={"landscape"}/>
-      <div className={`bg-neutral-500 items-center mix-blend-multiply absolute h-screen w-screen -z-10`}></div>
-      <nav className="grid grid-cols-4 gap-6 w-1/2 justify-between m-auto absolute top-1/2 left-1/4 font-extrabold text-x">
+      <div className="bg">
+        <Background width={"w-full"} height={"h-full"} query={"landscape"}/>
+        <div className={`bg-neutral-500 items-center mix-blend-multiply absolute h-screen w-screen -z-10`}></div>
+      </div>
+      <nav className="text-center grid grid-cols-2 sm:grid-cols-4 gap-6 w-1/2 justify-between m-auto absolute top-1/2 left-1/4 font-extrabold text-x">
         {links_iterator.map(((key: string) => {
           return (
             <div 
@@ -41,11 +43,11 @@ function App() {
         }))}
       </nav>
       
-      <div className="latest-news absolute top-full left-0 w-screen ">
+      <div className="latest-news absolute top-full left-0 w-screen">
         <div className={`bg-neutral-500 items-center mix-blend-multiply absolute left-0 h-full w-screen -z-10`}></div>
-        <Background width={"w-screen"} height={"h-full"} more={"absolute left-0"} query={"news"}/>
+        <Background width={"w-full"} height={"h-full"} more={"left-0"} query={"news"}/>
         <div className="text-2xl font-extrabold text-white mt-4 ml-16">Latest News</div>
-        <div className="articles container grid grid-cols-2 gap-4 w-11/12 overflow-y ml-12 mb-10">
+        <div className="articles container grid grid-cols-1 sm:grid-cols-2 gap-4 w-11/12 overflow-y ml-4 sm:ml-12 mb-10">
           {news && news.results.slice(0, 10).map((article) => (<Article article={article} key={article.uri}/>))}
         </div>
       </div>

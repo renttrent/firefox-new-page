@@ -21,15 +21,9 @@ export default function Background({width, height, more, query}: Props) {
 
   return (
     <>
-    <div id="background">
-      <div className={`absolute ${width} ${height} -z-50 ${more}`}
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: "100%",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-
+    <div id="background" className="">
+      <div className={`absolute ${width} ${height} -z-50 ${more} bg-orange-600`}>
+        <img src={image} className="w-full h-full object-cover sm:object-fill" />
       </div>
     </div>
     </>

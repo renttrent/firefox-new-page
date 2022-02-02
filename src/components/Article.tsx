@@ -11,7 +11,7 @@ const displayDate = (datestr: string) => {
 
 export default function Article({article} : Props) {
   return (
-  <div className="container flex flex-col h-full w-full p-3 mt-2 rounded-md shadow-md
+  <div className="flex flex-col h-full w-full p-3 mt-2 rounded-md shadow-md
   bg-gradient-to-r from-indigo-900 to-purple-800 text-white 
   hover:to-indigo-600 cursor-pointer" 
     onClick={() => window.open(article.url, "_blank")}>
