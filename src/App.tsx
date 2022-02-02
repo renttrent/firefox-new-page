@@ -44,8 +44,8 @@ function App() {
       </nav>
       
       <div className="latest-news absolute top-full left-0 w-screen">
-        <div className={`bg-neutral-500 items-center mix-blend-multiply absolute left-0 h-full w-screen -z-10`}></div>
         <Background width={"w-full"} height={"h-full"} more={"left-0"} query={"news"}/>
+        <div className={`bg-neutral-500 items-center mix-blend-multiply absolute left-0 min-h-full w-full -z-10`}></div>
         <div className="text-2xl font-extrabold text-white mt-4 ml-16">Latest News</div>
         <div className="articles container grid grid-cols-1 sm:grid-cols-2 gap-4 w-11/12 overflow-y ml-4 sm:ml-12 mb-10">
           {news && news.results.slice(0, 10).map((article) => (<Article article={article} key={article.uri}/>))}

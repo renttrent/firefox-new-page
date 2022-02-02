@@ -23,7 +23,7 @@ export default function Background({width, height, more, query}: Props) {
     <>
     <div id="background" className="">
       <div className={`absolute ${width} ${height} -z-50 ${more} bg-orange-600`}>
-        <img src={image} className="w-full h-full object-cover sm:object-fill" />
+        <img src={image} className="w-full sm:w-screen h-full sm:h-max object-cover sm:object-fill" alt="unsplash random"/>
       </div>
     </div>
     </>
