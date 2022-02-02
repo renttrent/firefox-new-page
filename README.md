@@ -2,7 +2,6 @@
 
 This repo requires you to at least have: 
 - New Tab Override [extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/) on Firefox.
-- Unsplash API Access Key [here](https://unsplash.com/developers)
 - New York Times API [here](https://developer.nytimes.com/apis)
 
 After Getting API keys you should create a `.env` file in root folder or if you are using vercel you can add envoirnment variables from their dashboard.
@@ -10,7 +9,6 @@ After Getting API keys you should create a `.env` file in root folder or if you 
 My env vars are written as follows:
 ```
 REACT_APP_NY_API={secret}
-REACT_APP_UNSPLASH={secret}
 ```
 
 You can add or remove links in the frontpage by editing the `links.json` file inside `src` folder.
